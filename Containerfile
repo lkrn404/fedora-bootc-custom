@@ -14,9 +14,7 @@ fastfetch \
 COPY sysmods/ /tmp/build/sysmods/
 COPY config/ /tmp/build/config/
 
-COPY sysmods/zram.sh /tmp/build/zram.sh
-COPY config/zram-generator.conf /tmp/build/config/zram-generator.conf
-RUN bash /tmp/build/zram.sh
+RUN bash /tmp/build/sysmods/zram.sh
 
 RUN systemctl enable NetworkManager.service
 RUN systemctl enable sshd.service
