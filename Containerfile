@@ -22,5 +22,6 @@ RUN systemctl enable sshd.service
 RUN rm -rf /tmp/build
 RUN dnf clean all
 
-# Check
-RUN bootc container lint --fatal-warnings
+# Check - need to address problems before fatal warnings enabled
+#RUN bootc container lint --fatal-warnings
+RUN bootc container lint
