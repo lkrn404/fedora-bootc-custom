@@ -7,8 +7,7 @@ curl \
 tmux \
 NetworkManager \
 openssh-server \
-fastfetch \
-&& dnf clean all
+fastfetch
 
 # Copy build scripts and configuration
 COPY sysmods/ /tmp/build/sysmods/
@@ -21,6 +20,7 @@ RUN systemctl enable sshd.service
 
 # Remove build-time files
 RUN rm -rf /tmp/build
+RUN dnf clean all
 
 # Check
-RUN bootc container lint
+RUN bootc container lint --fatal-warnings
