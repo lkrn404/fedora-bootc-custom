@@ -17,6 +17,9 @@ COPY config/ /tmp/build/config/
 RUN bash /tmp/build/sysmods/01-firewalld.sh
 RUN bash /tmp/build/sysmods/02-swap-on-zram.sh
 RUN bash /tmp/build/sysmods/11-enable-rpmfusion.sh
+RUN bash /tmp/build/sysmods/12-swap-codecs.sh
+RUN bash /tmp/build/sysmods/21-enable-terrapkg.sh
+RUN bash /tmp/build/sysmods/41-noctalia-desktop.sh
 #RUN bash /tmp/build/sysmods/example-disabled-thing.sh
 
 # -- Enable System services
